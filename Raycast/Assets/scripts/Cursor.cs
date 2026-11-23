@@ -15,9 +15,13 @@ public class Cursor : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(rayo, out hit);
 
-        if (Physics.Raycast(rayo, out hit))
+        if (Input.GetMouseButtonDown(0))
         {
-            print(hit.collider.gameObject.name);
+            if (Physics.Raycast(rayo, out hit))
+            {
+                Destroy(hit.collider.gameObject);
+            }
         }
+
     }
 }
