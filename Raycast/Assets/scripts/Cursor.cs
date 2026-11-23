@@ -17,10 +17,14 @@ public class Cursor : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(rayo, out hit))
+            if (hit.collider.gameObject.tag == "Destructible")
             {
-                Destroy(hit.collider.gameObject);
+                if (Physics.Raycast(rayo, out hit))
+                {
+                    Destroy(hit.collider.gameObject);
+                }
             }
+
         }
 
     }
